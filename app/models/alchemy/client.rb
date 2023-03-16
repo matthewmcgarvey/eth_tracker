@@ -2,7 +2,7 @@ require 'net/http'
 
 module Alchemy
   class Client
-    def initialize(api_key = ENV["ALCHEMY_API_KEY"])
+    def initialize(api_key: ENV["ALCHEMY_API_KEY"])
       @api_key = api_key
     end
 
