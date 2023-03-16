@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @eth_block = EthBlock.find(1)
+    @eth_block = EthBlock.last
   end
 end
