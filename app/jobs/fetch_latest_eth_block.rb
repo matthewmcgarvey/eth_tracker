@@ -5,7 +5,8 @@ class FetchLatestEthBlock
     block_number = fetch_latest_block_number
     return if block_already_stored?(block_number)
 
-    load_block_data(block_number)
+    eth_block = load_block_data(block_number)
+    notify_of_new_block(eth_block)
   end
 
   private
@@ -31,6 +32,17 @@ class FetchLatestEthBlock
     end
 
     eth_block.save!
+    eth_block
+  end
+
+  def notify_of_new_block(eth_block)
+    eth_block.broadcast_replace_to(
+      :eth_block,
+      target: "eth_block",
+      locals: {
+        eth_price: EthPrice.fetch_latest
+      }
+    )
   end
 
   def convert_to_ether(wei)
