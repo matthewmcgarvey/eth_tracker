@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_000945) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_17_161132) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "eth_blocks", force: :cascade do |t|
     t.string "number", null: false
     t.datetime "created_at", null: false
@@ -25,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_000945) do
 
   create_table "eth_transactions", force: :cascade do |t|
     t.string "from", null: false
-    t.string "to", null: false
+    t.string "to"
     t.decimal "value", null: false
     t.integer "eth_block_id"
     t.datetime "created_at", null: false
