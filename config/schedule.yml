@@ -1,0 +1,3 @@
+fetch_latest_eth_block:
+  cron: "* * * * *"
+  class: "FetchLatestEthBlock"

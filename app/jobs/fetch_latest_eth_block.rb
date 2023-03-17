@@ -1,4 +1,6 @@
-class FetchLatestEthBlock < ApplicationJob
+class FetchLatestEthBlock
+  include Sidekiq::Job
+
   def perform
     block_number = fetch_latest_block_number
     return if block_already_stored?(block_number)
