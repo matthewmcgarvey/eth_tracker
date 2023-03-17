@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 gem "sidekiq"
 gem "sidekiq-cron"
+gem "faye-websocket"
 
 # For fly.io
 gem "dockerfile-rails", ">= 1.2", :group => :development

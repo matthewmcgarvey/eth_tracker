@@ -6,7 +6,7 @@ kill_timeout = 5
 primary_region = "iad"
 [processes]
 web = "bin/rails fly:server"
-worker = "bundle exec sidekiq"
+worker = "bin/rails alchemy:listen"
 [deploy]
   release_command = "bin/rails db:prepare"
 
