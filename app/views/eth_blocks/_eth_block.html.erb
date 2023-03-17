@@ -1,5 +1,5 @@
 <div id="eth_block">
-  <h1><%= eth_block.number %></h1>
+  <h1><%= eth_block.number %> (<%= Integer(eth_block.number) %>)</h1>
   <table>
     <thead>
       <tr>
@@ -10,13 +10,13 @@
       </tr>
     </thead>
     <tbody>
+      <% eth_price = EthPrice.fetch_latest %>
       <% eth_block.eth_transactions.each do |txn| %>
-        <% next if txn.value.zero? %>
         <tr>
           <td><%= txn.from %></td>
           <td><%= txn.to %></td>
           <td><%= txn.value %></td>
-          <td></td>
+          <td><%= number_to_currency(eth_price.convert_to_usd(txn.value)) %></td>
         </tr>
       <% end %>
     </tbody>
