@@ -7,7 +7,8 @@ primary_region = "iad"
 [processes]
 web = "bin/rails fly:server"
 worker = "bundle exec sidekiq"
-
+[deploy]
+  release_command = "bin/rails db:prepare"
 
 [env]
 
