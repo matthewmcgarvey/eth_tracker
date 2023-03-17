@@ -17,6 +17,8 @@ COIN_MARKET_CAP_API_KEY=COIN_MARKET_CAP_API_KEY_HERE
 
 Then run `bundle install` to install dependencies.
 
+Before you can run the app, you need to set up the database. Run `bin/rails db:create db:migrate`.
+
 Now you should be able to run these two commands in two different terminals
 
 - `bin/rails s`
