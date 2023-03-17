@@ -1,24 +1,26 @@
-# README
+# Eth Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running this application
 
-Things you may want to cover:
+You will need to have these installed and working/running
 
-* Ruby version
+- Ruby 3.2.1
+- Redis
+- PostgreSQL
 
-* System dependencies
+You need to have a .env file in the root of the project that looks like this but with actual API keys
 
-* Configuration
+```env
+ALCHEMY_API_KEY=ALCHEMY_API_KEY_HERE
+COIN_MARKET_CAP_API_KEY=COIN_MARKET_CAP_API_KEY_HERE
+```
 
-* Database creation
+Then run `bundle install` to install dependencies.
 
-* Database initialization
+Now you should be able to run these two commands in two different terminals
 
-* How to run the test suite
+- `bin/rails s`
+- `bundle exec sidekiq`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+With that, the app should be running and you can go to `localhost:3000` and view the latest Etherium block and transactions.
+It should update every minute or so automatically.
