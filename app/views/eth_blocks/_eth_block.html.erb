@@ -10,7 +10,6 @@
       </tr>
     </thead>
     <tbody>
-      <% eth_price = EthPrice.fetch_latest %>
       <% eth_block.eth_transactions.each do |txn| %>
         <tr>
           <td><%= txn.from %></td>
