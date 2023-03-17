@@ -1,5 +1,4 @@
-class FindOrLoadEthBlock
-  include Sidekiq::Job
+class FindOrLoadEthBlock < ApplicationJob
 
   def perform(block_number)
     return if block_already_stored?(block_number)

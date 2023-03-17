@@ -1,3 +1,0 @@
-# fetch_latest_eth_block:
-#   cron: "every 15s"
-#   class: "FetchLatestEthBlock"
