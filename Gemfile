@@ -52,11 +52,11 @@ gem "faye-websocket"
 
 # For fly.io
 gem "dockerfile-rails", ">= 1.2", :group => :development
+gem "dotenv-rails"
 
 group :development, :test do
   gem "pry"
   gem "rspec-rails", "~> 6.0.0"
-  gem "dotenv-rails"
   gem "capybara"
 end
 
