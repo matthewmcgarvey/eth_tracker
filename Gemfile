@@ -50,8 +50,6 @@ gem "bootsnap", require: false
 
 gem "faye-websocket"
 
-# For fly.io
-gem "dockerfile-rails", ">= 1.2", :group => :development
 gem "dotenv-rails"
 
 group :development, :test do

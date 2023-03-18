@@ -6,7 +6,7 @@ I used a websocket client for updating on new ethereum blocks and [Turbo](https:
 
 Ethereum prices are updated every 10 minutes or so.
 
-It is deployed to [Fly.io](https://fly.io/).
+It is deployed to [Render.com](https://render.com/).
 
 ## Points of interest
 
